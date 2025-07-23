@@ -21,6 +21,11 @@ RUN pip3 install pyspark
 RUN pip3 install pytest
 RUN pip3 install notebook
 RUN pip3 install findspark
+
+
+RUN wget -qO ${SPARK_HOME}/jars/postgresql-42.6.0.jar \
+    https://repo1.maven.org/maven2/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar
+
 RUN ln /usr/bin/python3.7 /usr/bin/python
 
 WORKDIR /src
