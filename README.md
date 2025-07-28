@@ -15,6 +15,7 @@ Debe ejecutarse en este orden:
 ### Ejecución del cuaderno de Jupyter: cosas qué considerar
 El cuaderno ya tiene las salidas de la última ejecución, la cual fue probada varias veces previo a realizar la entrega del trabajo. Si de igual forma se desea ejecutar, tenga los siguientes datos en cuenta:
 * El entrenamiento del Random Forest arroja unos warnings que se deben a la configuración de spark, cada vez que se dispara un hilo que utiliza una cantidad "alta" de memoria. Esto decidimos no cambiarlo para evitar causar un error mayor si nos deshacíamos de los registros (logs) a la altura de `WARN` y solo nos quedábamos con los `ERROR`. **Al final** de esta celda en la que se ejecutan, podrá ver que se imprimen los valores "óptimos" del random forest con los cuales se trabajará de ahí en adelante.
+![Prueba del funcionamiento](imgs/warnings.png)
 * Tanto el entrenamiento de RF antes mencionado, como el uso de Cross-Validation, son **extremadamente lentos** si se ejecutan en arquitecturas distintas a la de la plataforma del contenedor (amd64), esto lo probamos usando una computadora con un procesador Apple M2, el cual, al tener que emular las instrucciones, toma mucho más tiempo en completar la ejecución del cuaderno.
 * Lo anterior se probó en máquinas "host" del contenedor tanto en Windows 11 como en Ubuntu Linux, eso sí, con procesadores de la misma arquitectura, y el entrenamiento mencionado, pese a tampoco ser instantáneo, no se vuelve algo que tome más de 5 minutos en nuestras máquinas.
 
